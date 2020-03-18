@@ -1,0 +1,318 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  outline: 0;
+}
+
+* h1, * h2, * h3, * h4, * h5, * h6 {
+  letter-spacing: 1px;
+}
+
+html {
+  font-size: 62.5% !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+}
+
+body .container {
+  max-width: 1200px;
+  text-align: center;
+}
+
+#show_camera, #sem_camera {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#show_camera .nome_empresa, #sem_camera .nome_empresa {
+  font-size: 2.4rem;
+  line-height: 3.3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #5E2973;
+}
+
+#show_camera .subtitulo_empresa, #show_camera .text_sem_dispositivos, #sem_camera .subtitulo_empresa, #sem_camera .text_sem_dispositivos {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #363636;
+}
+
+#show_camera .url_item, #sem_camera .url_item {
+  font-size: 1.4rem;
+  color: #B4B4B4;
+  cursor: url("../image/copiar_icon.jpg"), auto;
+  background: none;
+}
+
+#show_camera.hide_item, #sem_camera.hide_item {
+  display: none;
+}
+
+.box-cam, .box_no_cam {
+  background: #2B323A;
+  border-radius: .5rem;
+  margin: 4rem 0;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.box-cam_botoes button, .box_no_cam_botoes button {
+  background: #5E2973;
+  border: 1px solid #5E2973;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  border-radius: .5rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+
+.box-cam_botoes button .fa, .box_no_cam_botoes button .fa {
+  font-size: 2.2rem;
+}
+
+.box-cam:before {
+  content: 'Você';
+  display: block;
+  color: #fff;
+  position: absolute;
+  top: 32px;
+  left: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 15px;
+  font-size: 11px;
+}
+
+#cam_pausada {
+  width: 720px;
+  height: 560px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#cam_pausada.hide_item {
+  display: none;
+}
+
+#noVideo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 720px;
+  height: 560px;
+}
+
+.hide_item {
+  display: none;
+}
+
+input::-webkit-input-placeholder {
+  color: #C8C8C8;
+  opacity: 1;
+  font-style: italic;
+}
+
+input:-moz-placeholder {
+  color: #C8C8C8;
+  opacity: 1;
+  font-style: italic;
+}
+
+input::-moz-placeholder {
+  color: #C8C8C8;
+  opacity: 1;
+  font-style: italic;
+}
+
+input:-ms-input-placeholder {
+  color: #C8C8C8;
+  opacity: 1;
+  font-style: italic;
+}
+
+button {
+  cursor: pointer;
+}
+
+.botoes_participar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.5rem;
+}
+
+.botoes_participar .participar_pin {
+  border: 1px solid #C8C8C8;
+  font-size: 14px;
+  padding: 1rem 1.5rem;
+  width: 300px;
+  opacity: 1;
+  margin-right: 1rem;
+  border-radius: .5rem;
+  -webkit-transition: opacity .1s ease, width .4s ease;
+  transition: opacity .1s ease, width .4s ease;
+}
+
+.botoes_participar .participar_botao {
+  background-color: #5E2973;
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: .5rem;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25);
+  padding: 1rem 1.5rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.botoes_participar .participar_botao svg {
+  margin-right: .5rem;
+}
+
+.botoes_participar .participar_botao:hover, .botoes_participar .participar_botao:focus {
+  -webkit-filter: brightness(0.8) contrast(1.5);
+          filter: brightness(0.8) contrast(1.5);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.botoes_participar .participar_anfitriao {
+  color: #C51E77;
+  text-decoration: underline;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: transparent;
+  margin-left: 1.5rem;
+}
+
+.botoes_participar .hide_width {
+  width: 0;
+  opacity: 0;
+  -webkit-transition: opacity .1s ease, width .4s ease;
+  transition: opacity .1s ease, width .4s ease;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#sem_camera .botoes_participar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#sem_camera .botoes_participar .text_sem_dispositivos {
+  margin-bottom: 2rem;
+}
+
+#sem_camera .botoes_participar .participar_botao {
+  margin-bottom: 2rem;
+}
+
+#sem_camera .botoes_participar .participar_anfitriao {
+  margin-left: 0;
+}
+/*# sourceMappingURL=style.css.map */
