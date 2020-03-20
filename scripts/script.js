@@ -1,12 +1,11 @@
+const videoTag = document.querySelector('#video');
+const tooltip = document.querySelector("#tooltip");
+
 CopiarUrl();
 VideoFuncionalities();
 ParticiparChamada();
 
-const videoTag = document.querySelector('#video');
-const tooltip = document.querySelector("#tooltip");
-
-
-class IniciarCamera {
+/*class IniciarCamera {
   constructor(showCam, hideCam){
     this.cameraOn = showCam;
     this.cameraOff = hideCam;    
@@ -23,10 +22,10 @@ class IniciarCamera {
     }
   }
   
-}
+}*/
 
 /* SEND THE STREAM ON CAMERA TO VIDEO SRC */
-InitCam();
+/*InitCam();
 function InitCam (){
   const showCam = document.querySelector("#show_camera");
   const hideCam = document.querySelector("#sem_camera");
@@ -34,10 +33,10 @@ function InitCam (){
   const camera = new IniciarCamera(showCam, hideCam);
 
   camera.getMedia();
-}
+}*/
 
 
-function VideoFuncionalities(){
+function VideoFuncionalities() {
   const videoButton = document.querySelector(".box-cam_botoes .video");
   const videoPausado = document.querySelector("#cam_pausada");
   const videoButtonPlay = videoButton.querySelector(".cam-play");
@@ -49,16 +48,16 @@ function VideoFuncionalities(){
   /* ADD PLAY / PAUSE VIDEO */
   videoButton.addEventListener('click', () => {
     ShowHide([videoTag, videoPausado, videoButtonPlay, videoButtonPause]);
-    if(videoTag.paused)
-      videoTag.play();    
+    if (videoTag.paused)
+      videoTag.play();
     else
-      videoTag.pause();    
+      videoTag.pause();
   })
-  
+
   /* ADD MUTE / UNMUTE */
-  audioButton.addEventListener('click', () =>{
+  audioButton.addEventListener('click', () => {
     ShowHide([audioButtonPause, audioButtonPlay]);
-    if(videoTag.muted)
+    if (videoTag.muted)
       videoTag.muted = false
     else
       videoTag.muted = true;
@@ -66,24 +65,23 @@ function VideoFuncionalities(){
 }
 
 /* FUNCOES PARA PARTICIPAR DA CHAMADA */
-function ParticiparChamada(){
+function ParticiparChamada() {
   const botaoAnfitriao = document.querySelector(".participar_anfitriao");
   const participarVideo = document.querySelector(".participar_video");
   const participarPin = document.querySelector(".participar_pin");
 
   /* ENTRAR COMO ANFITRIÃO */
-  botaoAnfitriao.addEventListener('click', () =>{
+  botaoAnfitriao.addEventListener('click', () => {
     ShowHide([botaoAnfitriao]);
-    ShowHide([participarPin], "hide_width");  
+    ShowHide([participarPin], "hide_width");
   })
 
   /* PARTICIPAR CHAMADA */
   participarVideo.addEventListener("click", () => {
-    if(participarPin.value){
+    if (participarPin.value) {
       alert(`Entrar como anfitrião com o PIN: ${participarPin.value}`);
       //location.replace("http://127.0.0.1:5500/entrevista.html");
-    }
-    else{
+    } else {
       alert('Entrar como entrevistado');
       //location.replace("http://127.0.0.1:5500/entrevista.html?teste");
     }
@@ -91,28 +89,28 @@ function ParticiparChamada(){
 }
 
 /* COPIAR URL */
-function CopiarUrl(){
+function CopiarUrl() {
   const urlItem = document.querySelector(".url_item");
-  
-  urlItem.addEventListener('click', () =>{
+  urlItem.addEventListener('click', () => {
     document.execCommand("copy");
     tooltip.innerHTML = "Endereço Copiado";
   })
-  
+
   urlItem.addEventListener("copy", event => {
     event.preventDefault();
     const link_item = document.querySelector(".link_item");
     if (event.clipboardData) {
-      event.clipboardData.setData("text/plain", link_item.textContent);    
+      event.clipboardData.setData("text/plain", link_item.textContent);
     }
   });
-  
+
 }
+
 function outFunc() {
   tooltip.innerHTML = "Copiar Endereço";
 };
 
-function TentarNovamente(){
+function TentarNovamente() {
   const tryAgain = document.querySelector("#sem_camera .participar_botao");
 
   /* TENTAR NOVAMENTE */
@@ -122,8 +120,8 @@ function TentarNovamente(){
   });
 }
 
-function ShowHide(itens, classe = "hide_item"){
+function ShowHide(itens, classe = "hide_item") {
   itens.forEach(item => {
-    item.classList.toggle(classe);    
+    item.classList.toggle(classe);
   })
 }
